@@ -9,12 +9,11 @@ const Wrapper = styled.div`
   max-width: 80%;
 `;
 
-
 export default function Container() {
-    return (
-      <Wrapper>
-       <SidePanel />
-       <Header />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper>
+      <SidePanel />
+      <Header />
+    </Wrapper>
+  );
+}
