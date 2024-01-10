@@ -7,20 +7,44 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1`
-  margin-top: 0; 
+const Name = styled.h1`
+  margin-top: 0;
+  display: flex;
 `;
 
-const Text = styled.span` 
+const JobTitle = styled.h3`
+  margin-top: 0;
+  display: flex;
 `;
 
+const Contact = styled.span``;
 
-export default function Header() {
-    return (
-      <Wrapper>
-       <Title>Title</Title>
-       <Text>JOB positionOB positionOB positionOB positiOB positionOB positionOB positionOB positiononOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB positionOB position</Text>
+interface HeaderProps {
+  lastName?: string;
+  firstName?: string;
+  jobTitle?: string;
+  phone?: string;
+  mail?: string;
+  adress?: string;
+}
 
-      </Wrapper>
-    );
-  }
+export default function Header({
+  lastName,
+  firstName,
+  jobTitle,
+  phone,
+  mail,
+  adress,
+}: HeaderProps) {
+  return (
+    <Wrapper>
+      <Name>
+        {lastName} {firstName}
+      </Name>
+      <JobTitle>{jobTitle}</JobTitle>
+      <Contact>{phone}</Contact>
+      <Contact>{mail}</Contact>
+      <Contact>{adress}</Contact>
+    </Wrapper>
+  );
+}

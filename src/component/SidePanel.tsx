@@ -5,20 +5,10 @@ const Wrapper = styled.div`
   color: #000000;
 `;
 
-const ProfilePicture = styled.img`
-  border: 0.5rem solid white;
-  height: 18%;
-  margin: 2em;
-  @media (max-width: 740px) {
-    height: 12%;
-    margin: 1em;
-  }
-`;
+interface SidePanelProps {
+  children: JSX.Element;
+}
 
-export default function SidePanel() {
-  return (
-    <Wrapper>
-      <ProfilePicture src="/profile_pic.png" alt="profile-picture" />
-    </Wrapper>
-  );
+export default function SidePanel({ children }: SidePanelProps) {
+  return <Wrapper>{children}</Wrapper>;
 }

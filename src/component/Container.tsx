@@ -1,6 +1,4 @@
 import { styled } from "styled-components";
-import Header from "./Header";
-import SidePanel from "./SidePanel";
 
 const Wrapper = styled.div`
   background: white;
@@ -9,11 +7,10 @@ const Wrapper = styled.div`
   max-width: 80%;
 `;
 
-export default function Container() {
-  return (
-    <Wrapper>
-      <SidePanel />
-      <Header />
-    </Wrapper>
-  );
+interface ContainerProps {
+  children: JSX.Element;
+}
+
+export default function Container({ children }: ContainerProps) {
+  return <Wrapper>{children}</Wrapper>;
 }

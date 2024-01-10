@@ -1,0 +1,100 @@
+{
+  "data": {
+    "profile": {
+      "personalInfos": {
+        "lastName": "HAVET",
+        "firstName": "Benoît",
+        "jobTitle": "Développeur React JS-TS",
+        "phone": "0786765911",
+        "mail": "myungjae84@gmail.com",
+        "adress": "39 rue Stendhal 76020 Paris",
+        "description": "Certifié du titre de dévelopeurfull- stack ReactJS-Node]S suite à la formation du Reacteur en juillet 2019. Avec des appétences plutot Front-end, curieux des nouvelles technologies avec un intéret pour le design et la réflexion sur l'expérience utilsiateur.",
+        "photo": ""
+      },
+      "skills": [
+        "Javascript",
+        "ReactJs",
+        "HTML",
+        "CSS",
+        "Typescript",
+        "unit testing",
+        "Ajax",
+        "Cypress",
+        "Postman",
+        "Rest",
+        "Agile",
+        "web analytics"
+      ],
+      "interests": ["Sport", "Cuisine", "Traveling", "Beer"],
+      "careerPath": [
+        {
+          "startDate": "11/2022",
+          "endDate": "Actuel",
+          "company": "Razorfish groupe Publicis",
+          "title": "Développeur front-end",
+          "tasks": [
+            "Développement del'application native en TypeScriptsur React avec Expo GO",
+            "Maintient et développement de fonctionnalités dans les applications Legacy enangular et React Native",
+            "Apollo graphQL",
+            "Tests unitaires (jest)",
+            "Atomic design (StoryBook)",
+            "Méthode agile (scrum, safe)"
+          ]
+        },
+        {
+          "startDate": "01/2020",
+          "endDate": "10/2022",
+          "company": "Metroscope Groupe EDF",
+          "title": "Développeur front-end",
+          "tasks": [
+            "développement de composants basé sur un design system élaboré en interne (Storybook)",
+            "intégration Css in J5 avec Styled Component (linaria)",
+            "correction de Bugs",
+            "tests (Jest/Cypress)",
+            "OA",
+            "Développement de features sous forme de Stories",
+            "Méthode agile Scrum-Kanban",
+            "review de code, pair programming",
+            "veille tech (auto-formation Mooc, documentation, salons tech)",
+            "screening de candidats"
+          ]
+        },
+        {
+          "startDate": "07/2019",
+          "endDate": "12/2019",
+          "company": "Metroscope groupe EDF",
+          "title": "Développeur web et test",
+          "tasks": [
+            "Montée en compétence sur le testing, intégration UI, React J5 et design system."
+          ]
+        },
+        {
+          "startDate": "05/2018",
+          "endDate": "12/2018",
+          "company": "Momji Speaking agency",
+          "title": "Commercial",
+          "tasks": ["Chargé de clientèle, relation client"]
+        }
+      ],
+      "background": [
+        {
+          "startDate": "04/2019",
+          "endDate": "07/2019",
+          "company": "Le Reacteur",
+          "degree": ["Concepteur Développeur d'applications (Bac+3/4)"]
+        },
+        {
+          "startDate": "09/2003",
+          "endDate": "06/2006",
+          "company": "Esmod",
+          "degree": ["Bachelor FASHION DESIGN Esmod Paris - mention Bien"]
+        }
+      ],
+      "languageSkills": [
+        { "language": "Français", "level": "langue maternelle" },
+        { "language": "Anglais", "level": "Intermédiaire supérieur (B2)" },
+        { "language": "Coréen", "level": "Intermédiaire supérieur (B2)" }
+      ]
+    }
+  }
+}
