@@ -1,8 +1,11 @@
 import { styled } from "styled-components";
+import classnames from "classnames";
 
 const Wrapper = styled.div`
   padding: 0 1em;
-  max-width: 220px;
+  &.side-panel {
+    max-width: 220px;
+  }
 `;
 
 const Title = styled.h3`
@@ -24,11 +27,17 @@ interface SectionProps {
   title: string;
   content?: string;
   list?: any;
+  isFullWidth?: boolean;
 }
 
-export default function Section({ title, content, list }: SectionProps) {
+export default function Section({
+  title,
+  content,
+  list,
+  isFullWidth = true,
+}: SectionProps) {
   return (
-    <Wrapper>
+    <Wrapper className={classnames({ "side-panel": !isFullWidth })}>
       <Separator />
       <Title>{title}</Title>
       {content && <Content>{content}</Content>}

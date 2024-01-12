@@ -13,9 +13,16 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
+const RightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 function App() {
   const [data, setData] = useState<any | undefined>();
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,12 +36,12 @@ function App() {
         setData(result);
         console.log(result);
       } catch (error) {
-        setError(`Erreur lors de la requête :`);
+        setErrorMessage(`Erreur lors de la requête :` + error);
+        console.log(errorMessage);
       }
     };
-
     fetchData();
-  }, []);
+  }, [errorMessage]);
 
   const personalInfos = data?.data.profile.personalInfos;
 
@@ -47,7 +54,6 @@ function App() {
       </ul>
     );
   };
-  console.log({ skills });
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
@@ -60,18 +66,29 @@ function App() {
                 <Section
                   title="Profil professionnel"
                   content={personalInfos?.description}
+                  isFullWidth={false}
                 />
-                <Section title="Compétences" list={skills} />
+                <Section
+                  title="Compétences"
+                  list={skills()}
+                  isFullWidth={false}
+                />
               </>
             </SidePanel>
-            <Header
-              lastName={personalInfos?.lastName}
-              firstName={personalInfos?.firstName}
-              jobTitle={personalInfos?.jobTitle}
-              phone={personalInfos?.phone}
-              mail={personalInfos?.mail}
-              adress={personalInfos?.adress}
-            />
+            <RightSide>
+              <Header
+                lastName={personalInfos?.lastName}
+                firstName={personalInfos?.firstName}
+                jobTitle={personalInfos?.jobTitle}
+                phone={personalInfos?.phone}
+                mail={personalInfos?.mail}
+                adress={personalInfos?.adress}
+              />
+              <Section
+                title="Profil professionnel"
+                content={personalInfos?.description}
+              />
+            </RightSide>
           </>
         </Container>
       </Wrapper>
