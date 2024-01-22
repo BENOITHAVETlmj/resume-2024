@@ -6,13 +6,14 @@ const Wrapper = styled.div`
   &.side-panel {
     max-width: 220px;
   }
-  row-gap: 0.3em;
-  margin-bottom: 14px;
+  row-gap: 0.2em;
+  margin-top: 14px;
 `;
 
 const Date = styled.span`
   margin-top: 0;
   margin-bottom: 4px;
+  font-weight: 700;
 `;
 
 const Title = styled.h3`
@@ -37,8 +38,8 @@ export const ListElement = styled.li`
 
 interface SubSectionProps {
   title: string;
-  subtitle: string;
-  date: string;
+  subtitle?: string;
+  date?: string;
   list?: string[];
 }
 

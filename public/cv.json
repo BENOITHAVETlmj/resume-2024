@@ -7,7 +7,7 @@
         "jobTitle": "Développeur React JS-TS",
         "phone": "📱 0786765911",
         "mail": "📧 myungjae84@gmail.com",
-        "adress": "🏠 39 rue Stendhal 76020 Paris",
+        "adress": "🏠 39 rue Stendhal 75020 Paris",
         "description": "Certifié du titre de dévelopeur full-stack ReactJS-NodeJS suite à la formation du Reacteur en juillet 2019. Ayant des appétences plutot Front-end, je suis curieux des nouvelles technologies avec un intéret pour le design et la réflexion sur l'expérience utilisateur.",
         "photo": ""
       },
@@ -25,7 +25,7 @@
         "📆 Agile",
         "📊 web analytics"
       ],
-      "interests": ["Sport", "Cuisine", "Traveling", "Beer"],
+      "interests": ["🏃🏻 Sport", "🧳 Cuisine", "🍴 Traveling", "🍷 Wine"],
       "careerPath": [
         {
           "startDate": "11/2022",
@@ -34,7 +34,7 @@
           "title": "Développeur front-end",
           "tasks": [
             "Développement del'application native en TypeScriptsur React avec Expo GO",
-            "Maintient et développement de fonctionnalités dans les applications Legacy enangular et React Native",
+            "Maintient et développement de fonctionnalités dans les applications Legacy en angular et React Native",
             "Apollo graphQL",
             "Tests unitaires (jest)",
             "Atomic design (StoryBook)",
@@ -48,7 +48,7 @@
           "title": "Développeur front-end",
           "tasks": [
             "développement de composants basé sur un design system élaboré en interne (Storybook)",
-            "intégration Css in J5 avec Styled Component (linaria)",
+            "intégration Css in JS avec Styled Component (linaria)",
             "correction de Bugs",
             "tests (Jest/Cypress)",
             "OA",
@@ -91,9 +91,9 @@
         }
       ],
       "languageSkills": [
-        { "language": "Français", "level": "langue maternelle" },
-        { "language": "Anglais", "level": "Intermédiaire supérieur (B2)" },
-        { "language": "Coréen", "level": "Intermédiaire supérieur (B2)" }
+        { "language": "🇫🇷 Français", "level": "langue maternelle" },
+        { "language": "🇬🇧 Anglais", "level": "Intermédiaire supérieur (B2)" },
+        { "language": "🇰🇷 Coréen", "level": "Intermédiaire supérieur (B2)" }
       ]
     }
   }

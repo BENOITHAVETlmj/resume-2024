@@ -2,11 +2,10 @@ import { styled } from "styled-components";
 
 const Picture = styled.img`
   border: 0.5rem solid white;
-  height: 18%;
-  margin: 2em;
+  height: 184px;
+  margin: 2em 2em 0 2em;
   @media (max-width: 740px) {
-    height: 12%;
-    margin: 1em;
+    height: 148px;
   }
 `;
 

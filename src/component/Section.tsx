@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import classnames from "classnames";
-import React from "react";
 
 const Wrapper = styled.div`
   padding: 0 2em;
@@ -12,6 +11,8 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   margin-top: 0;
   margin-bottom: 4px;
+  color: #7e4e2c;
+  font-weight: 800;
 `;
 
 const Content = styled.div`
@@ -21,7 +22,7 @@ const Content = styled.div`
 
 const Separator = styled.div`
   margin: 18px 0;
-  border: solid 1px black;
+  border: solid 1px #7e4e2c;
 `;
 
 interface SectionProps {

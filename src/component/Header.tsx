@@ -10,14 +10,23 @@ const Wrapper = styled.div`
 const Name = styled.h1`
   margin-top: 0;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
 `;
 
 const JobTitle = styled.h3`
   margin-top: 0;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
-const Contact = styled.span``;
+const Contact = styled.span`
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 interface HeaderProps {
   lastName?: string;
