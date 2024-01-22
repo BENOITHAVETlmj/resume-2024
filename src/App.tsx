@@ -5,7 +5,7 @@ import SidePanel from "./component/SidePanel";
 import ProfilePicture from "./component/ProfilePicture";
 import { Suspense, useEffect, useState } from "react";
 import Section from "./component/Section";
-import SubSection from "./component/SubSection";
+import SubSection, { List, ListElement } from "./component/SubSection";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -49,11 +49,11 @@ function App() {
 
   const skills = () => {
     return (
-      <ul>
+      <List>
         {data?.data?.profile?.skills.map((skill: string) => (
-          <li key={skill}>{skill}</li>
+          <ListElement key={skill}>{skill}</ListElement>
         ))}
-      </ul>
+      </List>
     );
   };
 

@@ -3,7 +3,7 @@ import classnames from "classnames";
 import React from "react";
 
 const Wrapper = styled.div`
-  padding: 0 1em;
+  padding: 0 2em;
   &.side-panel {
     max-width: 220px;
   }

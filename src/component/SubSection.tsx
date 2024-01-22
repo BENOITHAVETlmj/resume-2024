@@ -25,13 +25,14 @@ const SubTitle = styled.span`
   margin-bottom: 4px;
 `;
 
-const List = styled.ul`
+export const List = styled.ul`
   margin-top: 6px;
   font-size: 12px;
+  padding-left: 0;
 `;
 
-const ListElement = styled.li`
-  text-decoration: none;
+export const ListElement = styled.li`
+  list-style-type: none;
 `;
 
 interface SubSectionProps {
@@ -55,7 +56,7 @@ export default function SubSection({
       {list && (
         <List>
           {list.map((e: string) => (
-            <ListElement key={e}>{e}</ListElement>
+            <ListElement key={e}>- {e}</ListElement>
           ))}
         </List>
       )}
