@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.div`
   background: white;
-  padding: 0 0.5em;
+  padding: 0 1em;
   display: flex;
   flex-direction: column;
 `;

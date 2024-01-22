@@ -5,6 +5,7 @@ import SidePanel from "./component/SidePanel";
 import ProfilePicture from "./component/ProfilePicture";
 import { Suspense, useEffect, useState } from "react";
 import Section from "./component/Section";
+import SubSection from "./component/SubSection";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -34,7 +35,6 @@ function App() {
         const result = await response.json();
 
         setData(result);
-        console.log(result);
       } catch (error) {
         setErrorMessage(`Erreur lors de la requête :` + error);
         console.log(errorMessage);
@@ -45,14 +45,28 @@ function App() {
 
   const personalInfos = data?.data.profile.personalInfos;
 
+  const careerPath = data?.data?.profile?.careerPath;
+
   const skills = () => {
     return (
       <ul>
         {data?.data?.profile?.skills.map((skill: string) => (
-          <li>{skill}</li>
+          <li key={skill}>{skill}</li>
         ))}
       </ul>
     );
+  };
+
+  const careerPathList = () => {
+    return careerPath?.map((xp: any) => (
+      <SubSection
+        key={xp.startDate}
+        title={xp.company}
+        subtitle={xp.title}
+        date={`${xp.startDate} - ${xp.endDate}`}
+        list={xp.tasks}
+      />
+    ));
   };
 
   return (
@@ -86,7 +100,7 @@ function App() {
               />
               <Section
                 title="Profil professionnel"
-                content={personalInfos?.description}
+                content={careerPathList()}
               />
             </RightSide>
           </>

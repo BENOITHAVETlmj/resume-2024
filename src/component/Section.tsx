@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import classnames from "classnames";
+import React from "react";
 
 const Wrapper = styled.div`
   padding: 0 1em;
@@ -25,8 +26,8 @@ const Separator = styled.div`
 
 interface SectionProps {
   title: string;
-  content?: string;
-  list?: any;
+  content?: string | JSX.Element;
+  list?: JSX.Element;
   isFullWidth?: boolean;
 }
 
