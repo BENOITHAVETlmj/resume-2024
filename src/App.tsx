@@ -6,6 +6,7 @@ import ProfilePicture from "./component/ProfilePicture";
 import { Suspense, useEffect, useState } from "react";
 import Section from "./component/Section";
 import SubSection, { List, ListElement } from "./component/SubSection";
+import { Background, Career, Data, LanguageSkill } from "./types/global";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -30,23 +31,24 @@ function App() {
         const response = await fetch("/cv.json");
 
         if (!response.ok) {
-          throw new Error(`Erreur HTTP: ${response.status}`);
+          throw new Error(`HTTP error: ${response.status}`);
         }
         const result = await response.json();
 
         setData(result);
       } catch (error) {
-        setErrorMessage(`Erreur lors de la requête :` + error);
+        setErrorMessage(`Request error :` + error);
         console.log(errorMessage);
       }
     };
     fetchData();
   }, [errorMessage]);
 
-  const personalInfos = data?.data.profile.personalInfos;
-  const careerPath = data?.data?.profile?.careerPath;
-  const background = data?.data?.profile?.background;
-  const language = data?.data?.profile?.languageSkills;
+  const personalInfos: Data["profile"]["personalInfos"] =
+    data?.data.profile.personalInfos;
+  const careerPath: Career[] = data?.data?.profile?.careerPath;
+  const background: Background[] = data?.data?.profile?.background;
+  const language: LanguageSkill[] = data?.data?.profile?.languageSkills;
 
   const skills = () => {
     return (
@@ -69,7 +71,7 @@ function App() {
   };
 
   const careerPathList = () => {
-    return careerPath?.map((xp: any) => (
+    return careerPath?.map((xp: Career) => (
       <SubSection
         key={xp.startDate}
         title={xp.company}
@@ -81,7 +83,7 @@ function App() {
   };
 
   const backgroundList = () => {
-    return background?.map((e: any) => (
+    return background?.map((e: Background) => (
       <SubSection
         key={e.startDate}
         title={e.company}
@@ -92,7 +94,7 @@ function App() {
   };
 
   const languageList = () => {
-    return language?.map((e: any) => (
+    return language?.map((e: LanguageSkill) => (
       <SubSection key={e.language} title={e.language} subtitle={e.level} />
     ));
   };

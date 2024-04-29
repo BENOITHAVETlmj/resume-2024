@@ -27,7 +27,7 @@ const Separator = styled.div`
 
 interface SectionProps {
   title: string;
-  content?: string | JSX.Element;
+  content?: JSX.Element[] | string;
   list?: JSX.Element;
   isFullWidth?: boolean;
 }
