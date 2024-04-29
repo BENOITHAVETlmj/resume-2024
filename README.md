@@ -1,3 +1,7 @@
+# Can have a look on deployed version
+
+[resume-2024](https://resume-2024.vercel.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
