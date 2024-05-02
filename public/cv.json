@@ -7,7 +7,7 @@
         "jobTitle": "Développeur React JS-TS",
         "phone": "📱 0786765911",
         "mail": "📧 myungjae84@gmail.com",
-        "adress": "🏠 39 rue Stendhal 75020 Paris",
+        "adress": "",
         "description": "Certifié du titre de dévelopeur full-stack ReactJS-NodeJS suite à la formation du Reacteur en juillet 2019. Ayant des appétences plutot Front-end, je suis curieux des nouvelles technologies avec un intéret pour le design et la réflexion sur l'expérience utilisateur.",
         "photo": ""
       },
@@ -33,10 +33,12 @@
           "company": "Razorfish groupe Publicis",
           "title": "Développeur front-end",
           "tasks": [
-            "Développement del'application native en TypeScriptsur React avec Expo GO",
-            "Maintient et développement de fonctionnalités dans les applications Legacy en angular et React Native",
+            "Développement de l'application native en TypeScriptsur React avec Expo GO",
+            "Maintient et développement de fonctionnalités sur des applications Legacy en angular et React Native",
             "Apollo graphQL",
             "Tests unitaires (jest)",
+            "Développement de SPA sur du React Typescript en relation avec un CMS headless",
+            "Implémentation d'évéments de tracking",
             "Atomic design (StoryBook)",
             "Méthode agile (scrum, safe)"
           ]
