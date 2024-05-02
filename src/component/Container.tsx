@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   padding: 10px;
   width: 50%;
+  border-radius: 30px;
   @media (max-width: 1700px) {
     width: 60%;
   }
