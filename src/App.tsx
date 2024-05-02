@@ -3,16 +3,36 @@ import Container from "./component/Container";
 import Header from "./component/Header";
 import SidePanel from "./component/SidePanel";
 import ProfilePicture from "./component/ProfilePicture";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Section from "./component/Section";
 import SubSection, { List, ListElement } from "./component/SubSection";
 import { Background, Career, Data, LanguageSkill } from "./types/global";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import classNames from "classnames";
 
 const Wrapper = styled.div`
   height: 100%;
-  background: #f4eae0;
   display: flex;
   justify-content: center;
+  filter: blur(6em);
+  opacity: 0.6;
+  transition: filter 0.5s ease-out, opacity 0.5s ease-out;
+  &.--unblur {
+    filter: blur(0);
+    opacity: 1;
+  }
+  padding-bottom: 100px;
+`;
+
+const Buffer = styled.div`
+  height: 70vh;
+  filter: blur(6em);
+  opacity: 0.6;
+  transition: filter 0.5s ease-out, opacity 0.5s ease-out;
+  &.--unblur {
+    filter: blur(0);
+    opacity: 1;
+  }
 `;
 
 const RightSide = styled.div`
@@ -24,6 +44,9 @@ const RightSide = styled.div`
 function App() {
   const [data, setData] = useState<any | undefined>();
   const [errorMessage, setErrorMessage] = useState("");
+  const ref = useRef(null);
+
+  const [isBlured, setIsBlured] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -99,12 +122,38 @@ function App() {
     ));
   };
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.8", "start start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    latest > 0.5 && setIsBlured(true);
+    latest < 0.5 && setIsBlured(false);
+  });
+
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <Wrapper className="App">
+      <Buffer
+        className={classNames({
+          "--unblur": isBlured,
+        })}
+      />
+      <Wrapper
+        as={motion.div}
+        className={classNames("App", {
+          "--unblur": isBlured,
+        })}
+        ref={ref}
+        style={{ opacity: scrollYProgress }}
+      >
         <Container>
           <>
-            <SidePanel>
+            <SidePanel
+              className={classNames("App", {
+                "--unblur": isBlured,
+              })}
+            >
               <>
                 <ProfilePicture />
                 <Section
