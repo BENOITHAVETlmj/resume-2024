@@ -33,7 +33,7 @@
           "company": "Razorfish groupe Publicis",
           "title": "Développeur front-end",
           "tasks": [
-            "Développement de l'application native en TypeScriptsur React avec Expo GO",
+            "Développement de l'application native en TypeScript sur React avec Expo GO",
             "Maintient et développement de fonctionnalités sur des applications Legacy en angular et React Native",
             "Apollo graphQL",
             "Tests unitaires (jest)",
