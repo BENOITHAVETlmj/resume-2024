@@ -18,6 +18,7 @@
         "👨‍🎨 CSS",
         "🔒 Typescript",
         "🔏 unit testing",
+        "👾 CMS Headless",
         "🐈‍⬛ Github",
         "✅ Cypress",
         "🧑🏽‍🚀 Postman",
@@ -28,12 +29,26 @@
       "interests": ["🏃🏻 Sport", "🍴 Cuisine", "🧳 Traveling", "🍷 Wine"],
       "careerPath": [
         {
-          "startDate": "11/2022",
+          "startDate": "12/2023",
           "endDate": "Actuel",
           "company": "Razorfish groupe Publicis",
           "title": "Développeur front-end",
           "tasks": [
-            "Développement de l'application native en TypeScript sur React avec Expo GO",
+            "Développement d'applications SPA from scratch pour Nissan",
+            "Développement de fonctionnalités et création des composants",
+            "Développement avec un front en React Typescript en relation avec un CMS headless (AEM et Storyblok)",
+            "Implémentation d'évéments de tracking",
+            "Atomic design",
+            "Méthode agile"
+          ]
+        },
+        {
+          "startDate": "11/2022",
+          "endDate": "11/2023",
+          "company": "Razorfish groupe Publicis",
+          "title": "Développeur front-end",
+          "tasks": [
+            "Développement et maintenance sur des applications native en TypeScript sur React pour Dior",
             "Maintient et développement de fonctionnalités sur des applications Legacy en angular et React Native",
             "Apollo graphQL",
             "Tests unitaires (jest)",
