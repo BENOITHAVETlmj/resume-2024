@@ -31,15 +31,30 @@ const LoadingWrapper = styled.div`
   color: #333;
 `;
 
+const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px;
+
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
 function App() {
   const [data, setData] = useState<any | undefined>();
   const [errorMessage, setErrorMessage] = useState("");
+  const [languageVersion, setLanguageVersion] = useState<"en" | "fr">("fr");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/cv.json");
-
+        const response = await fetch(`/cv_${languageVersion}.json`);
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
@@ -52,7 +67,7 @@ function App() {
       }
     };
     fetchData();
-  }, [errorMessage]);
+  }, [languageVersion, errorMessage]);
 
   const personalInfos: Data["profile"]["personalInfos"] =
     data?.data.profile.personalInfos;
@@ -109,17 +124,16 @@ function App() {
     ));
   };
 
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Set a 3-second timeout to display the loading message
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
     // Clean up the timer
     return () => clearTimeout(timer);
-  }, []);
+  }, [data]);
 
   if (isLoading) {
     return (
@@ -130,13 +144,20 @@ function App() {
           height="480"
           className="giphy-embed"
           allowFullScreen
-        ></iframe>
+        />
       </LoadingWrapper>
     );
   }
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
+      <Button
+        onClick={() =>
+          setLanguageVersion(languageVersion === "en" ? "fr" : "en")
+        }
+      >
+        {languageVersion === "en" ? "Switch to French" : "Switch to English"}
+      </Button>
       <Wrapper className="App">
         <Container>
           <>
@@ -144,17 +165,23 @@ function App() {
               <>
                 <ProfilePicture />
                 <Section
-                  title="Profil professionnel"
+                  title={
+                    languageVersion === "fr"
+                      ? "Profil professionnel"
+                      : "Professional Profile"
+                  }
                   content={personalInfos?.description}
                   isFullWidth={false}
                 />
                 <Section
-                  title="Compétences"
+                  title={languageVersion === "fr" ? "Compétences" : "skills"}
                   list={skills()}
                   isFullWidth={false}
                 />
                 <Section
-                  title="Centres d'intérês"
+                  title={
+                    languageVersion === "fr" ? "Centres d'intérês" : "Interests"
+                  }
                   list={interests()}
                   isFullWidth={false}
                 />
@@ -170,11 +197,21 @@ function App() {
                 adress={personalInfos?.adress}
               />
               <Section
-                title="Parcours professionnel"
+                title={
+                  languageVersion === "fr"
+                    ? "Parcours professionnel"
+                    : "Carrer path"
+                }
                 content={careerPathList()}
               />
-              <Section title="Formation" content={backgroundList()} />
-              <Section title="Langues" content={languageList()} />
+              <Section
+                title={languageVersion === "fr" ? "Formation" : "Education"}
+                content={backgroundList()}
+              />
+              <Section
+                title={languageVersion === "fr" ? "Langues" : "Languages"}
+                content={languageList()}
+              />
             </RightSide>
           </>
         </Container>

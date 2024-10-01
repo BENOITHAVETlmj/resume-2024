@@ -1,0 +1,117 @@
+{
+  "data": {
+    "profile": {
+      "personalInfos": {
+        "lastName": "HAVET",
+        "firstName": "Benoît",
+        "jobTitle": "React JS-TS Developer",
+        "phone": "📱 0786765911",
+        "mail": "📧 myungjae84@gmail.com",
+        "adress": "",
+        "description": "Certified full-stack ReactJS-NodeJS developer after completing Le Reacteur training in July 2019. With a preference for front-end development, I am curious about new technologies, with an interest in design and user experience.",
+        "photo": ""
+      },
+      "skills": [
+        "🚀 Javascript",
+        "⚛️ ReactJs",
+        "🧩 HTML",
+        "👨‍🎨 CSS",
+        "🔒 Typescript",
+        "🔏 unit testing",
+        "👾 CMS Headless",
+        "🐈‍⬛ Github",
+        "✅ Cypress",
+        "🧑🏽‍🚀 Postman",
+        "↔️ Rest API",
+        "📆 Agile",
+        "📊 web analytics"
+      ],
+      "interests": ["🏃🏻 Sports", "🍴 Cooking", "🧳 Traveling", "🍷 Wine"],
+      "careerPath": [
+        {
+          "startDate": "12/2023",
+          "endDate": "Current",
+          "company": "Razorfish group Publicis",
+          "title": "Front-end Developer",
+          "tasks": [
+            "Development of SPA applications from scratch for Nissan",
+            "Development of features and creation of components",
+            "Front-end development with React Typescript, working with a headless CMS (AEM and Storyblok)",
+            "Implementation of tracking events",
+            "Atomic design",
+            "Agile methodology"
+          ]
+        },
+        {
+          "startDate": "11/2022",
+          "endDate": "11/2023",
+          "company": "Razorfish group Publicis",
+          "title": "Front-end Developer",
+          "tasks": [
+            "Development and maintenance of native applications in TypeScript on React for Dior",
+            "Maintenance and development of features on legacy applications in Angular and React Native",
+            "Apollo GraphQL",
+            "Unit testing (jest)",
+            "Development of SPA on React Typescript, working with a headless CMS",
+            "Implementation of tracking events",
+            "Atomic design (StoryBook)",
+            "Agile methodology (scrum, safe)"
+          ]
+        },
+        {
+          "startDate": "01/2020",
+          "endDate": "10/2022",
+          "company": "Metroscope Group EDF",
+          "title": "Front-end Developer",
+          "tasks": [
+            "Development of components based on an internally developed design system (Storybook)",
+            "CSS-in-JS integration with Styled Component (linaria)",
+            "Bug fixes",
+            "Testing (Jest/Cypress)",
+            "OA",
+            "Development of features as Stories",
+            "Agile Scrum-Kanban methodology",
+            "Code reviews, pair programming",
+            "Tech watch (self-training Mooc, documentation, tech conferences)",
+            "Candidate screening"
+          ]
+        },
+        {
+          "startDate": "07/2019",
+          "endDate": "12/2019",
+          "company": "Metroscope Group EDF",
+          "title": "Web Developer and Tester",
+          "tasks": [
+            "Skill development in testing, UI integration, React J5, and design systems."
+          ]
+        },
+        {
+          "startDate": "05/2018",
+          "endDate": "12/2018",
+          "company": "Momji Speaking Agency",
+          "title": "Sales Representative",
+          "tasks": ["Client management, customer relations"]
+        }
+      ],
+      "background": [
+        {
+          "startDate": "04/2019",
+          "endDate": "07/2019",
+          "company": "Le Reacteur",
+          "degree": ["Application Developer Designer (Bac+3/4)"]
+        },
+        {
+          "startDate": "09/2003",
+          "endDate": "06/2006",
+          "company": "Esmod",
+          "degree": ["Bachelor of FASHION DESIGN Esmod Paris - with honors"]
+        }
+      ],
+      "languageSkills": [
+        { "language": "🇫🇷 French", "level": "Native language" },
+        { "language": "🇬🇧 English", "level": "Upper-intermediate (B2)" },
+        { "language": "🇰🇷 Korean", "level": "Upper-intermediate (B2)" }
+      ]
+    }
+  }
+}
