@@ -31,6 +31,11 @@ const LoadingWrapper = styled.div`
   color: #333;
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Button = styled.button`
   padding: 10px 20px;
   background-color: #4caf50;
@@ -151,13 +156,25 @@ function App() {
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <Button
-        onClick={() =>
-          setLanguageVersion(languageVersion === "en" ? "fr" : "en")
-        }
-      >
-        {languageVersion === "en" ? "Switch to French" : "Switch to English"}
-      </Button>
+      <ButtonWrapper>
+        <Button
+          onClick={() =>
+            window.open(
+              "https://github.com/BENOITHAVETlmj/resume-2024",
+              "_blank"
+            )
+          }
+        >
+          Go to Github
+        </Button>
+        <Button
+          onClick={() =>
+            setLanguageVersion(languageVersion === "en" ? "fr" : "en")
+          }
+        >
+          {languageVersion === "en" ? "Switch to French" : "Switch to English"}
+        </Button>
+      </ButtonWrapper>
       <Wrapper className="App">
         <Container>
           <>
@@ -200,7 +217,7 @@ function App() {
                 title={
                   languageVersion === "fr"
                     ? "Parcours professionnel"
-                    : "Carrer path"
+                    : "Career path"
                 }
                 content={careerPathList()}
               />
