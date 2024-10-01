@@ -10,7 +10,7 @@ import { Background, Career, Data, LanguageSkill } from "./types/global";
 
 const Wrapper = styled.div`
   height: 100%;
-  background: #f4eae0;
+  background: #f4dfc8;
   display: flex;
   justify-content: center;
 `;
@@ -19,6 +19,16 @@ const RightSide = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+`;
+
+const LoadingWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4eae0;
+  font-size: 2rem;
+  color: #333;
 `;
 
 function App() {
@@ -98,6 +108,32 @@ function App() {
       <SubSection key={e.language} title={e.language} subtitle={e.level} />
     ));
   };
+
+  const [isLoading, setIsLoading] = useState(true); // Track loading state
+
+  useEffect(() => {
+    // Set a 3-second timeout to display the loading message
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    // Clean up the timer
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <LoadingWrapper>
+        <iframe
+          src="https://giphy.com/embed/3o7Zen3RCzrnhHnSkU"
+          width="480"
+          height="480"
+          className="giphy-embed"
+          allowFullScreen
+        ></iframe>
+      </LoadingWrapper>
+    );
+  }
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
