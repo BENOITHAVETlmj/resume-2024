@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import Container from "./component/Container";
+import { motion } from "framer-motion";
 import Header from "./component/Header";
 import SidePanel from "./component/SidePanel";
 import ProfilePicture from "./component/ProfilePicture";
@@ -7,6 +8,7 @@ import { Suspense, useEffect, useState } from "react";
 import Section from "./component/Section";
 import SubSection, { List, ListElement } from "./component/SubSection";
 import { Background, Career, Data, LanguageSkill } from "./types/global";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -22,6 +24,7 @@ const RightSide = styled.div`
 
 const LoadingWrapper = styled.div`
   height: 100vh;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +46,10 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 1rem;
   margin: 10px;
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
 
   &:hover {
     background-color: #12343b;
@@ -99,31 +106,63 @@ function App() {
   };
 
   const careerPathList = () => {
-    return careerPath?.map((xp: Career) => (
-      <SubSection
-        key={xp.startDate}
-        title={xp.company}
-        subtitle={xp.title}
-        date={`${xp.startDate} - ${xp.endDate}`}
-        list={xp.tasks}
-      />
+    return careerPath?.map((xp: Career, index: number) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: 100, y: 50 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{
+          duration: 0.7,
+          delay: index * 0.3,
+          ease: "easeInOut",
+        }}
+      >
+        <SubSection
+          key={xp.startDate}
+          title={xp.company}
+          subtitle={xp.title}
+          date={`${xp.startDate} - ${xp.endDate}`}
+          list={xp.tasks}
+        />
+      </motion.div>
     ));
   };
 
   const backgroundList = () => {
-    return background?.map((e: Background) => (
-      <SubSection
+    return background?.map((e: Background, index: number) => (
+      <motion.div
         key={e.startDate}
-        title={e.company}
-        subtitle={e.degree?.[0]}
-        date={`${e.startDate} - ${e.endDate}`}
-      />
+        initial={{ opacity: 0, x: 100, y: 50 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{
+          duration: 0.7,
+          delay: index * 0.3,
+          ease: "easeInOut",
+        }}
+      >
+        <SubSection
+          title={e.company}
+          subtitle={e.degree?.[0]}
+          date={`${e.startDate} - ${e.endDate}`}
+        />
+      </motion.div>
     ));
   };
 
   const languageList = () => {
-    return language?.map((e: LanguageSkill) => (
-      <SubSection key={e.language} title={e.language} subtitle={e.level} />
+    return language?.map((e: LanguageSkill, index: number) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: 100, y: 50 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{
+          duration: 0.7,
+          delay: index * 0.3,
+          ease: "easeInOut",
+        }}
+      >
+        <SubSection key={e.language} title={e.language} subtitle={e.level} />
+      </motion.div>
     ));
   };
 
@@ -132,7 +171,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
 
     // Clean up the timer
     return () => clearTimeout(timer);
@@ -140,15 +179,23 @@ function App() {
 
   if (isLoading) {
     return (
-      <LoadingWrapper>
-        <iframe
-          src="https://giphy.com/embed/3o7Zen3RCzrnhHnSkU"
-          width="480"
-          height="480"
-          className="giphy-embed"
-          allowFullScreen
-        />
-      </LoadingWrapper>
+      <>
+        <ButtonWrapper>
+          <Button disabled>Go to Github</Button>
+          <Button disabled>
+            {languageVersion === "en"
+              ? "Switch to French"
+              : "Switch to English"}
+          </Button>
+        </ButtonWrapper>
+        <LoadingWrapper>
+          <DotLottieReact
+            src="https://lottie.host/83e5bcd7-52ba-4298-87f7-5e5b161c19e7/ML7QvrHEFu.json"
+            loop
+            autoplay
+          />
+        </LoadingWrapper>
+      </>
     );
   }
 
