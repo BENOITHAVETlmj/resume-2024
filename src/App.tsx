@@ -10,7 +10,6 @@ import { Background, Career, Data, LanguageSkill } from "./types/global";
 
 const Wrapper = styled.div`
   height: 100%;
-  background: #f4dfc8;
   display: flex;
   justify-content: center;
 `;
@@ -26,7 +25,6 @@ const LoadingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4eae0;
   font-size: 2rem;
   color: #333;
 `;
@@ -38,7 +36,7 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: #2d545e;
   color: white;
   border: none;
   border-radius: 25px;
@@ -47,7 +45,7 @@ const Button = styled.button`
   margin: 10px;
 
   &:hover {
-    background-color: #45a049;
+    background-color: #12343b;
   }
 `;
 

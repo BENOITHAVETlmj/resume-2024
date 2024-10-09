@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   }
   row-gap: 0.2em;
   margin-top: 14px;
+  background: #e1b382;
+  padding: 15px;
+  border-radius: 15px;
 `;
 
 const Date = styled.span`

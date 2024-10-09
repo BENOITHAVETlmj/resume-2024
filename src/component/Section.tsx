@@ -6,6 +6,9 @@ const Wrapper = styled.div`
   &.side-panel {
     max-width: 220px;
   }
+  @media (max-width: 540px) {
+    padding: 0 1em;
+  }
 `;
 
 const Title = styled.h3`

@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 const Wrapper = styled.div`
-  background: white;
   padding: 0 1em;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@ const Wrapper = styled.div`
     transform: scale(0.6);
     text-align: center;
   }
+  color: #12343b;
 `;
 
 const Name = styled.h1`
@@ -27,9 +27,6 @@ const JobTitle = styled.h3`
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  @media (max-width: 540px) {
-    text-align: center;
-  }
 `;
 
 const Contact = styled.span`
